@@ -1,3 +1,6 @@
 spring:
   application:
-    name: Remote Arduino API
+    name: remote-arduino-app
+  docker:
+    compose:
+      file: docker-compose.yml

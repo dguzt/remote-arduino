@@ -1,6 +1,0 @@
-spring:
-  data:
-    mongodb:
-      database: dev-arduino
-      password: dev-arduino
-      username: dev-arduino
