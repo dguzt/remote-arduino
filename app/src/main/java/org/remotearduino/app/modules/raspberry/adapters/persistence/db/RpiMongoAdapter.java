@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.remotearduino.app.modules.raspberry.RpiToRegister;
 import org.remotearduino.app.modules.raspberry.domain.Rpi;
+import org.remotearduino.app.modules.raspberry.domain.RpiAvailability;
 import org.remotearduino.app.modules.raspberry.ports.SaveRpiPort;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -22,8 +23,10 @@ public class RpiMongoAdapter implements SaveRpiPort {
     }
 
     @Override
-    public Mono<Rpi> save(RpiToRegister rpiToRegister) {
+    public Mono<Rpi> save(RpiToRegister rpiToRegister, RpiAvailability availabilityStatus) {
         var doc = rpiMapper.toDocument(rpiToRegister);
+        doc.setAvailability(availabilityStatus);
+
         return rpiRepository.save(doc)
                 .map(rpiMapper::toRpi);
     }

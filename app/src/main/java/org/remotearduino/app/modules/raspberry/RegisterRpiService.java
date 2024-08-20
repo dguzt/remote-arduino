@@ -3,6 +3,7 @@ package org.remotearduino.app.modules.raspberry;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.remotearduino.app.modules.raspberry.domain.Rpi;
+import org.remotearduino.app.modules.raspberry.domain.RpiAvailability;
 import org.remotearduino.app.modules.raspberry.ports.SaveRpiPort;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -22,7 +23,7 @@ public class RegisterRpiService implements RegisterRpiUseCase {
                         return Mono.error(alreadyRegisteredException);
                     }
 
-                    return saveRpiPort.save(rpiToRegister);
+                    return saveRpiPort.save(rpiToRegister, RpiAvailability.REGISTERED);
                 });
     }
 }

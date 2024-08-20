@@ -4,6 +4,7 @@ public record Rpi(
         String id,
         String ip,
         String os,
-        String startId
+        String startId,
+        RpiAvailability availability
 ) {
 }
