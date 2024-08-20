@@ -45,6 +45,7 @@ dependencies {
 	implementation 'org.springframework.security:spring-security-messaging'
 	implementation 'org.springframework.security:spring-security-rsocket'
 	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+	implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.6.0'
 
 	compileOnly 'org.projectlombok:lombok'
 

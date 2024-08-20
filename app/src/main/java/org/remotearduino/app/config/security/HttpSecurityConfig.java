@@ -11,7 +11,7 @@ import org.springframework.security.web.server.util.matcher.PathPatternParserSer
 
 @Configuration
 @EnableWebFluxSecurity
-public class SecurityHttpConfig {
+public class HttpSecurityConfig {
 
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
