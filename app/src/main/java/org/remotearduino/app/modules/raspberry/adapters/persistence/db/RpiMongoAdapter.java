@@ -23,7 +23,7 @@ public class RpiMongoAdapter implements SaveRpiPort {
 
     @Override
     public Mono<Rpi> save(RpiToRegister rpiToRegister) {
-        var doc = rpiMapper.toDoc(rpiToRegister);
+        var doc = rpiMapper.toDocument(rpiToRegister);
         return rpiRepository.save(doc)
                 .map(rpiMapper::toRpi);
     }

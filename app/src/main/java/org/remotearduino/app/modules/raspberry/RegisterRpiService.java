@@ -18,7 +18,8 @@ public class RegisterRpiService implements RegisterRpiUseCase {
         return saveRpiPort.existsByStartId(rpiToRegister.startId())
                 .flatMap(alreadyRegistered -> {
                     if (Boolean.TRUE.equals(alreadyRegistered)) {
-                        return Mono.error(new RpiAlreadyRegisteredException(rpiToRegister.startId()));
+                        var alreadyRegisteredException = new RpiAlreadyRegisteredException(rpiToRegister.startId());
+                        return Mono.error(alreadyRegisteredException);
                     }
 
                     return saveRpiPort.save(rpiToRegister);

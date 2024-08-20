@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Setter
 @Document("rpi")
-public class RpiDoc {
+public class RpiDocument {
     @Id
     private String id;
     private String ip;

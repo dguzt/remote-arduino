@@ -12,11 +12,11 @@ public interface RpiMapper {
     @Mapping(target = "ip", source = "ip")
     @Mapping(target = "os", source = "os")
     @Mapping(target = "startId", source = "startId")
-    RpiDoc toDoc(RpiToRegister rpiToRegister);
+    RpiDocument toDocument(RpiToRegister rpiToRegister);
 
     @Mapping(target = "id", source = "id")
     @Mapping(target = "ip", source = "ip")
     @Mapping(target = "os", source = "os")
     @Mapping(target = "startId", source = "startId")
-    Rpi toRpi(RpiDoc rpiDoc);
+    Rpi toRpi(RpiDocument rpiDoc);
 }
