@@ -10,7 +10,7 @@ COPY src ./src
 
 RUN chmod +x gradlew
 
-RUN ./gradlew build --no-daemon
+RUN ./gradlew bootJar --no-daemon
 
 FROM eclipse-temurin:21-jre
 
