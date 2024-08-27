@@ -1,4 +1,4 @@
-package org.remotearduino.app.modules.raspberry.adapters.persistence.db;
+package org.remotearduino.app.modules.raspberry.adapters.persistence.mongo;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class RpiMongoAdapter implements SaveRpiPort {
+public class RpiMongoSaveRpiAdapter implements SaveRpiPort {
 
     private final RpiRepository rpiRepository;
     private final RpiMapper rpiMapper;

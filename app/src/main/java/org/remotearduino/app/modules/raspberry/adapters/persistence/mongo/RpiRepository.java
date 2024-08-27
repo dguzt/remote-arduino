@@ -1,4 +1,4 @@
-package org.remotearduino.app.modules.raspberry.adapters.persistence.db;
+package org.remotearduino.app.modules.raspberry.adapters.persistence.mongo;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Mono;

@@ -26,7 +26,7 @@ class RegisterRpiServiceTest {
 
     @Test
     void whenTryToRegisterRpi_andItWasNotRegisteredBefore_thenShouldRegisterRpi() {
-        var rpiToRegister = new RpiToRegister("10.10.10.10", "raspbian", "1111-2222-3333-4444");
+        var rpiToRegister = TestRpiFactory.createDefaultRpiToRegister();
 
         var rpiId = "123456";
         var rpiRegistered = new Rpi(rpiId, rpiToRegister.ip(), rpiToRegister.os(), rpiToRegister.startId(), RpiAvailability.REGISTERED);
@@ -45,7 +45,7 @@ class RegisterRpiServiceTest {
 
     @Test
     void whenTryToRegisterRpi_andItWasAlreadyRegistered_thenFailWithRpiThrowAlreadyRegistered() {
-        var rpiToRegister = new RpiToRegister("10.10.10.10", "raspbian", "1111-2222-3333-4444");
+        var rpiToRegister = TestRpiFactory.createDefaultRpiToRegister();
 
         when(saveRpiPort.existsByStartId(any())).thenReturn(Mono.just(true));
 
