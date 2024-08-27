@@ -37,9 +37,6 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -54,6 +51,7 @@ jobs:
       - name: Define Docker image
         run: |
           REMOTE_ARDUINO_DOCKER_IMAGE_FULL=${{ vars.REMOTE_ARDUINO_DOCKER_IMAGE }}:${{ env.REMOTE_ARDUINO_DOCKER_TAG }}
+          echo "REMOTE_ARDUINO_DOCKER_IMAGE_FULL=$REMOTE_ARDUINO_DOCKER_IMAGE_FULL" >> $GITHUB_ENV
 
       - name: Build Docker image
         run: docker build -t ${{ env.REMOTE_ARDUINO_DOCKER_IMAGE_FULL }} .
